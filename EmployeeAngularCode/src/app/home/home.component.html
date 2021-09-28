@@ -1,0 +1,39 @@
+<h3  style="text-align: center; color: black;">Welcome to DXC Technology!</h3>
+
+<body style="background:lightgray" >
+    Search : <input type="text" placeholder="Search" [(ngModel)]="searchText" />
+<br>
+<br>
+<br>
+<table *ngIf="employee" class="table table-bordered table-condensed table-hover" style="cursor:pointer" >
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Department Id </th> 
+            <th>Department Name</th> 
+            
+
+             
+                 
+        </tr>
+    </thead>
+    
+        <tr (click)="details(emp.employeeId)" *ngFor="let emp of employee | employeeFilter:searchText">
+            <td style="color: cornflowerblue;">{{emp.employeeId}}</td>
+            <td>{{emp.firstName}}</td>
+            <td>{{emp.lastName}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.department.departmentId}}</td>
+            <td>{{emp.department.departmentName}}</td>
+            
+
+            
+            
+           
+        </tr>
+    
+</table>
+</body>

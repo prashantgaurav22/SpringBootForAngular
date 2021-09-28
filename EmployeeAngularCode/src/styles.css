@@ -1,0 +1,9 @@
+#example1 {
+    background-image: url("src\dxcwalpaper.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  h1,h2,h2,body,p,strong{
+    color: rgb(7, 7, 7);
+}

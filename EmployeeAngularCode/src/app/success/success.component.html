@@ -1,0 +1,30 @@
+<body><h2 style="text-align: center; color: black;">DXC Technology Employee Details</h2>
+
+<table *ngIf="employee" class="table table-bordered table-condensed table-hover" style="cursor:pointer">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Department Id </th> 
+            <th>Department Name</th> 
+             
+                 
+        </tr>
+    </thead>
+    <tbody>
+        <tr (click)="details(emp.Employee_Id)" *ngFor="let emp of employee| employeeFilter:searchText">
+            <td>{{emp.Employee_Id}}</td>
+            <td>{{emp.First_Name}}</td>
+            <td>{{emp.Last_Name}}</td>
+            <td>{{emp.Email}}</td>
+            <td>{{emp.Department_Id}}</td>
+            <td>{{emp.Department_Name}}</td>
+            
+            
+           
+        </tr>
+    </tbody>
+</table>
+</body>

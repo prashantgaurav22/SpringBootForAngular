@@ -1,0 +1,50 @@
+<h3 style="text-align: center;color: black;">DXC Technology!</h3>
+<h3 style="color: black;">Employees Details</h3>
+
+<label style="color: black;"> <b>Employee Id to Search :</b></label> 
+<input type="number" [(ngModel)]="count" />
+<form (ngSubmit)="loadData()">
+    <button>Submit</button>
+</form>
+
+
+
+<div class="alert alert-info" *ngIf="!(errMsg || emps)">
+    <strong>Loading Data! Please wait...!</strong>
+</div>
+
+<div class="alert alert-danger" *ngIf="errMsg">
+    <strong>{{errMsg}}</strong>
+</div>
+
+<table *ngIf="emps" class="table table-bordered table-condensed table-hover" style="cursor:pointer">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Department Id </th>
+            <th>Department Name </th>
+            <th>Registration Time </th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+             
+            <td style="color: white">{{emps.employeeId}}</td>
+            <td style="color: white">{{emps.firstName}}</td>
+            <td style="color: white">{{emps.lastName}}</td>
+            <td style="color: white">{{emps.email}}</td>
+            <td style="color: white;">{{emps.department.departmentId}}</td>
+            <td style="color: white;">{{emps.department.departmentName}}</td>
+            <td style="color: white;">{{emps.timeStamp}}</td>
+
+           
+
+
+        </tr>
+    </tbody>
+</table>

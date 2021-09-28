@@ -1,0 +1,65 @@
+<h3 style="text-align: center; color: black;">Registration Page</h3>
+<div class="alert alert-warning" *ngIf="errMsg">
+    <strong>{{errMsg}}</strong>
+</div>
+<div class="col-sm-5">
+<form [formGroup]="employeeForm" (ngSubmit)="save()">
+<div class="form-group">
+   <label>Employee Id</label>
+      <input type="number" class="form-control" formControlName="employeeId" required />
+         <div class="alert alert-danger" *ngIf="f.employeeId.invalid && (f.employeeId.touched || f.employeeId.dirty)" >
+             <fa-icon [icon]="errIcon"></fa-icon>
+             <span>EmployeeId is manditory & Greater Than 0</span>
+                
+          </div>
+       </div>
+    
+
+<div class="form-group">
+    <label>First Name</label>
+       <input type="text" class="form-control" formControlName="firstName" required/>
+           <div *ngIf="f.firstName.invalid && (f.firstName.touched || f.firstName.dirty)" class="alert alert-danger">
+            <fa-icon [icon]="errIcon"></fa-icon>
+               <span>First Name is manditory</span>
+         </div>
+       </div>
+
+
+<div class="form-group">
+    <label>Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName" required/>
+         <div *ngIf="f.lastName.invalid && (f.lastName.touched || f.lastName.dirty)" class="alert alert-danger">
+           <fa-icon [icon]="errIcon"></fa-icon>
+              <span>Last Name is manditory</span>
+        </div>
+    </div>
+
+
+ <div class="form-group">
+    <label>Email</label>
+        <input type="text" class="form-control" formControlName="email" required/>
+          <div *ngIf="f.email.invalid && (f.email.touched || f.email.dirty)" class="alert alert-danger">
+         <fa-icon [icon]="errIcon"></fa-icon>
+     <span>Email Should be proper Format</span>
+</div>
+</div>
+
+<div class="form-group">
+        <label>Department Id</label>
+          <input type="number" class="form-control" formControlName="Dept_Id" required/>
+           <div *ngIf="f.Dept_Id.invalid && (f.Dept_Id.touched || f.Dept_Id.dirty)" class="alert alert-danger">
+             <fa-icon [icon]="errIcon"></fa-icon>
+                 <span>DepartmentId is manditory & Between 0 to 7</span>
+      </div>
+    </div>
+
+
+
+<div class="text-right">
+    <button class="btn btn-primary" [disabled]="!employeeForm.valid">
+        <fa-icon [icon]="btnIcon"></fa-icon>
+            SAVE
+       </button>
+     </div>
+   </form>
+</div>
